@@ -2,6 +2,7 @@
   "name": "demo-chart",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://win-saptest.sphinxjsc.com:8000/",
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
     "@testing-library/jest-dom": "^5.16.5",
