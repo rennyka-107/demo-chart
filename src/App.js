@@ -13,6 +13,8 @@ import {
 } from "chart.js";
 import { Doughnut, Bar } from "react-chartjs-2";
 import { Line } from 'react-chartjs-2';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 ChartJS.register(
   ArcElement,
@@ -28,6 +30,15 @@ ChartJS.register(
 
 
 function App() {
+  const [data,setData] = useState();
+  async function fetchData() {
+    const res = await axios.get("https://win-saptest.sphinxjsc.com:44300/sphinx/get_bar_chart?sap-client=800");
+    console.log(res, "res")
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+  
   return (
     <div className="flex flex-col items-center gap-[20px]">
       <h1 className="text-3xl text-red-500 font-bold underline">
